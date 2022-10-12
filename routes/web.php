@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Student;
 use App\Http\Controllers\Teacher;
+use App\Http\Controllers\Admin;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,14 @@ Route::middleware(['auth', 'verified', 'role:2'])
     ->group(function() {
         Route::get('/timetable', [Teacher\TimetableController::class, 'index'])
             ->name('timetable');
+    });
+
+Route::middleware(['auth', 'verified', 'role:3'])
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function() {
+        Route::get('/students', [Admin\StudentsController::class, 'index'])
+            ->name('students');
     });
 
 require __DIR__.'/auth.php';
