@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth', 'verified'])
+Route::middleware(['auth', 'verified', 'role:1'])
     ->prefix('student')
     ->name('student.')
     ->group(function() {
@@ -25,7 +25,7 @@ Route::middleware(['auth', 'verified'])
             ->name('timetable');
     });
 
-Route::middleware(['auth', 'verified'])
+Route::middleware(['auth', 'verified', 'role:2'])
     ->prefix('teacher')
     ->name('teacher.')
     ->group(function() {
