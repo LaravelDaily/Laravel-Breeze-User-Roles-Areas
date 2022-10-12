@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Student;
+use App\Http\Controllers\Teacher;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +23,7 @@ Route::middleware(['auth', 'verified', 'role:1'])
     ->prefix('student')
     ->name('student.')
     ->group(function() {
-        Route::get('/timetable', [\App\Http\Controllers\Student\TimetableController::class, 'index'])
+        Route::get('/timetable', [Student\TimetableController::class, 'index'])
             ->name('timetable');
     });
 
@@ -29,7 +31,7 @@ Route::middleware(['auth', 'verified', 'role:2'])
     ->prefix('teacher')
     ->name('teacher.')
     ->group(function() {
-        Route::get('/timetable', [\App\Http\Controllers\Teacher\TimetableController::class, 'index'])
+        Route::get('/timetable', [Teacher\TimetableController::class, 'index'])
             ->name('timetable');
     });
 
