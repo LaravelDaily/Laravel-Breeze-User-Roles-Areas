@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         Role::create(['name' => 'Student']);
         Role::create(['name' => 'Teacher']);

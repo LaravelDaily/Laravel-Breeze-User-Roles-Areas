@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Student;
 
+use Illuminate\View\View;
 use App\Http\Controllers\Controller;
 
 class TimetableController extends Controller
 {
-    public function index()
+    public function index(): View
     {
         $timetable = [
             'Monday' => [
