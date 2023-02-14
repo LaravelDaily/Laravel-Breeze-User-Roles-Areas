@@ -2,8 +2,8 @@
 
 namespace App\View\Components;
 
-use Illuminate\View\View;
 use Illuminate\View\Component;
+use Illuminate\View\View;
 
 class StudentLayout extends Component
 {

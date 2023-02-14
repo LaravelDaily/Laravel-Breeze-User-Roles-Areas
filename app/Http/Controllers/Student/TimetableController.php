@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Student;
 
-use Illuminate\View\View;
 use App\Http\Controllers\Controller;
+use Illuminate\View\View;
 
 class TimetableController extends Controller
 {
