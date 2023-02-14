@@ -11,10 +11,8 @@ class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
         Role::create(['name' => 'Student']);
         Role::create(['name' => 'Teacher']);
@@ -24,7 +22,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@admin.com',
             'password' => bcrypt('somesecretpassword'),
-            'role_id' => 3
+            'role_id' => 3,
         ]);
     }
 }
